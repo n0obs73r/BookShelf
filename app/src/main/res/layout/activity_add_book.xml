@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:padding="10dp"
+        android:layout_height="match_parent"
+        tools:context=".AddBook">
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="Book Name"
+            android:hint="@string/book_name"
+            android:id="@+id/addbookname"
+            android:gravity="center"
+            android:layout_margin="10dp"
+            android:inputType="textPersonName" />
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+        android:text="@string/add"
+        android:layout_gravity="end"
+            android:id="@+id/addbooknamebutton"
+        android:padding="10dp"
+        android:layout_margin="10dp" />
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+        android:orientation="horizontal" >
+    <EditText
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:autofillHints="Book Name"
+            android:hint="@string/serch_book_name"
+            android:id="@+id/searchbookactivity2"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="10dp"
+            android:inputType="textPersonName"
+            android:layout_width="0dp"/>
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/search"
+                android:id="@+id/searchactivity2"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="10dp" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:id="@+id/bookviewactivity2"
+            android:layout_margin="10dp" />
+
+</LinearLayout>

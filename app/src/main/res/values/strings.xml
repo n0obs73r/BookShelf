@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Book Library</string>
+    <string name="book_name">Book Name</string>
+    <string name="search">Search</string>
+    <string name="search_for_book">Search for book</string>
+    <string name="bookname">BookName</string>
+    <string name="book_price">Book Price:</string>
+    <string name="bookcategory">BookCategory</string>
+    <string name="author">Author</string>
+    <string name="book_name">Book Name</string>
+    <string name="add">Add</string>
+    <string name="serch_book_name">Serch Book Name</string>
+    <string name="search">Search</string>
+    <string name="delete">Delete</string>
+</resources>
