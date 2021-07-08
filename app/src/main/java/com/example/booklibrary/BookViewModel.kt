@@ -4,8 +4,8 @@ import androidx.lifecycle.*
 import kotlinx.coroutines.launch
 
 class BookViewModel(private val repository: BookRepository) : ViewModel() {
-    val allBooks: LiveData<List<BookInfo>> = repository.allBooks.asLiveData()
-    fun insert(book: BookInfo) = viewModelScope.launch {
+    val allBooks: LiveData<List<Book>> = repository.allBooks.asLiveData()
+    fun insert(book: Book) = viewModelScope.launch {
         repository.insert(book)
     }
 }

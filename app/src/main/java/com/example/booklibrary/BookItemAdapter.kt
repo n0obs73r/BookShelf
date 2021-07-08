@@ -7,7 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 
-class BookItemAdapter(private val bookItems: ArrayList<BookInfo>)
+class BookItemAdapter(private val bookItems: ArrayList<Book>)
     : RecyclerView.Adapter<BookItemAdapter.BookViewHolder>() {
 
     inner class BookViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -16,11 +16,11 @@ class BookItemAdapter(private val bookItems: ArrayList<BookInfo>)
         private val bookCategoryTextView: TextView = view.findViewById(R.id.bookcategory)
         private val bookAuthorTextView: TextView = view.findViewById(R.id.bookauthor)
 
-        fun bindTo(bookItem: BookInfo) {
-            bookNameTextView.text = bookItem.bookName
-            bookPriceView.text = bookItem.bookPrice.toString()
-            bookAuthorTextView.text = bookItem.authorName
-            bookCategoryTextView.text = bookItem.bookNo.toString()
+        fun bindTo(bookItem: Book) {
+            bookNameTextView.text = bookItem.BookName
+            bookPriceView.text = bookItem.BookPrice.toString()
+            bookAuthorTextView.text = bookItem.AuthorName
+            bookCategoryTextView.text = bookItem.BookNo.toString()
 
         }
     }
@@ -38,7 +38,7 @@ class BookItemAdapter(private val bookItems: ArrayList<BookInfo>)
         return bookItems.size
     }
 
-    fun update(newData: ArrayList<BookInfo>) {
+    fun update(newData: List<Book>) {
         bookItems.clear()
         bookItems.addAll(newData)
         notifyDataSetChanged()

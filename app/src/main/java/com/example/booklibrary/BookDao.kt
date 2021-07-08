@@ -1,5 +1,6 @@
 package com.example.booklibrary
 
+import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
@@ -7,19 +8,21 @@ import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface BookDao {
-    @Query("SELECT * FROM user")
-    fun getAll(): Flow<List<BookInfo>>
+    @Query("SELECT * FROM bookstore")
+    fun getAll(): Flow<List<Book>>
 
-    @Query("SELECT * FROM user WHERE BookNo IN (:userIds)")
-    fun loadAllByIds(userIds: IntArray): List<BookInfo>
+    @Query("SELECT * FROM bookstore WHERE book_id IN (:userIds)")
+    fun loadAllByIds(userIds: IntArray): List<Book>
 
-    @Query("SELECT * FROM user WHERE first_name LIKE :first AND " +
-            "last_name LIKE :last LIMIT 1")
-    fun findByName(first: String, last: String): BookInfo
+    @Query("SELECT * FROM bookstore WHERE book_name LIKE :name LIMIT 1")
+    fun findByName(name: String): Book
 
     @Insert
-    fun insertAll(vararg users: BookInfo)
+    fun insertAll(vararg users: Book)
 
     @Delete
-    fun delete(user: BookInfo)
+    fun delete(user: Book)
+
+    @Query("DELETE FROM bookstore")
+    fun deleteAll()
 }

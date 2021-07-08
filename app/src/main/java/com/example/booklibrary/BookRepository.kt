@@ -4,11 +4,11 @@ import androidx.annotation.WorkerThread
 import kotlinx.coroutines.flow.Flow
 
 class BookRepository(private val bookDao: BookDao) {
-    val allBook: Flow<List<BookInfo>> = bookDao.getAll()
+    val allBooks: Flow<List<Book>> = bookDao.getAll()
 
     @Suppress("RedundantSuspendModifier")
     @WorkerThread
-    suspend fun insert(book: BookInfo) {
+    suspend fun insert(book: Book) {
         bookDao.insertAll(book)
     }
 }
