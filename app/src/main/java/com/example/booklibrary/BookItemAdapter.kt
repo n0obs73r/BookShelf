@@ -20,7 +20,7 @@ class BookItemAdapter(private val bookItems: ArrayList<BookInfo>)
             bookNameTextView.text = bookItem.bookName
             bookPriceView.text = bookItem.bookPrice.toString()
             bookAuthorTextView.text = bookItem.authorName
-            bookCategoryTextView.text = bookItem.bookCategory
+            bookCategoryTextView.text = bookItem.bookNo.toString()
 
         }
     }
