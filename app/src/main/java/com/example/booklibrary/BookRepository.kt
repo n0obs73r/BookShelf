@@ -1,8 +1,7 @@
 package com.example.booklibrary
 
 import androidx.annotation.WorkerThread
-import java.util.concurrent.Flow
-
+import kotlinx.coroutines.flow.Flow
 
 class BookRepository(private val bookDao: BookDao) {
     val allBook: Flow<List<BookInfo>> = bookDao.getAll()
