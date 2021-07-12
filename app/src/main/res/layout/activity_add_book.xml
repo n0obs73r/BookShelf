@@ -7,6 +7,12 @@
         android:layout_height="match_parent"
         tools:context=".AddBook">
 
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:text="Enter Book ID: "
+              android:layout_margin="10dp"
+              android:layout_gravity="left"
+              android:textStyle="bold"/>
+
     <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -16,6 +22,12 @@
             android:gravity="center"
             android:layout_margin="10dp"
             android:inputType="text" />
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:text="Enter Book Name: "
+              android:layout_margin="10dp"
+              android:layout_gravity="left"
+              android:textStyle="bold"/>
 
     <EditText
             android:layout_width="match_parent"
@@ -27,6 +39,12 @@
             android:layout_margin="10dp"
             android:inputType="text" />
 
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:text="Enter Book Author Name: "
+              android:layout_margin="10dp"
+              android:layout_gravity="left"
+              android:textStyle="bold"/>
+
     <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -36,6 +54,12 @@
             android:gravity="center"
             android:layout_margin="10dp"
             android:inputType="text" />
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:text="Enter Book Price: "
+              android:layout_margin="10dp"
+              android:layout_gravity="left"
+              android:textStyle="bold"/>
 
     <EditText
             android:layout_width="match_parent"
