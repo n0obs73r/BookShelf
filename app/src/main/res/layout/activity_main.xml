@@ -14,6 +14,7 @@
         android:layout_margin="10dp"
         android:textStyle="bold" />
     <EditText
+        android:id="@+id/search_book_field"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/book_name"
@@ -39,6 +40,7 @@
 
         <Button
             android:layout_width="wrap_content"
+            android:id="@+id/search"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:text="@string/search" />

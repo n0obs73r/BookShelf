@@ -26,7 +26,7 @@ abstract class  AppDatabase : RoomDatabase() {
             }
         }
 
-        fun populateDatabase(bookDao: BookDao) {
+        suspend fun populateDatabase(bookDao: BookDao) {
             bookDao.deleteAll()
 
             val book = Book(1, "ABC",  100, "XYZ")

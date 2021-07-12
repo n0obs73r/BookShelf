@@ -12,17 +12,20 @@ interface BookDao {
     fun getAll(): Flow<List<Book>>
 
     @Query("SELECT * FROM bookstore WHERE book_id IN (:userIds)")
-    fun loadAllByIds(userIds: IntArray): List<Book>
+    suspend fun loadAllByIds(userIds: IntArray): List<Book>
 
-    @Query("SELECT * FROM bookstore WHERE book_name LIKE :name LIMIT 1")
-    fun findByName(name: String): Book
+    @Query("SELECT * FROM bookstore WHERE book_name LIKE :name")
+    fun findByName(name: String): Flow<List<Book>>
 
     @Insert
-    fun insertAll(vararg users: Book)
+    suspend fun insertAll(vararg users: Book)
 
     @Delete
-    fun delete(user: Book)
+    suspend fun delete(user: Book)
 
     @Query("DELETE FROM bookstore")
     fun deleteAll()
+
+    @Query("SELECT COUNT(*) FROM bookstore where book_id = :bookId")
+    suspend fun exists(bookId: Int): Int
 }

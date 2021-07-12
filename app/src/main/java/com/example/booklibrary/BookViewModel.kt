@@ -4,9 +4,17 @@ import androidx.lifecycle.*
 import kotlinx.coroutines.launch
 
 class BookViewModel(private val repository: BookRepository) : ViewModel() {
-    val allBooks: LiveData<List<Book>> = repository.allBooks.asLiveData()
+    var allBooks = MutableLiveData<List<Book>>(listOf<Book>())
+
+    init {
+        allBooks.value = repository.allBooks.asLiveData().value
+    }
+
     fun insert(book: Book) = viewModelScope.launch {
         repository.insert(book)
+    }
+    fun searchByName(bookName: String) {
+        allBooks.value = repository.searchBookByName(bookName).asLiveData().value
     }
 }
 

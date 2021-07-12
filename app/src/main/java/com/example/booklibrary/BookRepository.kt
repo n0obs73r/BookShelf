@@ -11,4 +11,8 @@ class BookRepository(private val bookDao: BookDao) {
     suspend fun insert(book: Book) {
         bookDao.insertAll(book)
     }
+
+    fun searchBookByName(name: String) : Flow<List<Book>>{
+        return bookDao.findByName(name)
+    }
 }

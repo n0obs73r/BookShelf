@@ -6,6 +6,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -36,6 +37,19 @@ class MainActivity : AppCompatActivity() {
         addBtn.setOnClickListener {
             val intent = Intent(this, AddBook::class.java)
             startActivityForResult(intent, newBookActivityRequestCode)
+        }
+
+        val searchBtn = findViewById<Button>(R.id.search)
+        searchBtn.setOnClickListener {
+            val searchName = findViewById<EditText>(R.id.search_book_field).text.toString()
+            if(searchName.isEmpty()) {
+                Toast.makeText(
+                    applicationContext,
+                    "Search field can't be empty",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+            bookViewModel.searchByName(searchName)
         }
     }
 
