@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/linearLayout"
-    android:layout_width="match_parent"
-    android:padding="10dp"
-    android:orientation="horizontal"
-    android:layout_height="170dp">
+              android:id="@+id/linearLayout"
+              android:layout_width="match_parent"
+              android:padding="10dp"
+              android:orientation="horizontal"
+              android:layout_height="170dp" android:baselineAligned="false">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -13,7 +13,7 @@
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Book Name:"
+                android:text="@string/book_namee"
                 android:textStyle="bold"
                 android:layout_weight="1"
                 android:textSize="20sp" />
@@ -28,7 +28,7 @@
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Book Price:"
+                android:text="@string/book_pricee"
                 android:textStyle="bold"
                 android:layout_weight="1"
                 android:textSize="20sp" />
@@ -50,7 +50,7 @@
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Book ID:"
+                android:text="@string/book_idd"
                 android:textStyle="bold"
                 android:layout_weight="1"
                 android:textSize="20sp" />
@@ -65,7 +65,7 @@
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Book Author:"
+                android:text="@string/book_authorr"
                 android:textStyle="bold"
                 android:layout_weight="1"
                 android:textSize="20sp" />

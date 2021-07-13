@@ -13,6 +13,9 @@
     <string name="book_id">Book ID</string>
     <string name="book_author">Book Author</string>
     <string name="add_a_book">Add a Book</string>
-    <string name="add">Add</string>
     <string name="add_book">Add Book</string>
+    <string name="book_namee">Book Name:</string>
+    <string name="book_pricee">Book Price:</string>
+    <string name="book_idd">Book ID:</string>
+    <string name="book_authorr">Book Author:</string>
 </resources>
