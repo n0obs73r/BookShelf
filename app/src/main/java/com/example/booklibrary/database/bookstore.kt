@@ -1,4 +1,4 @@
-package com.example.booklibrary
+package com.example.booklibrary.database
 
 import android.os.Parcel
 import android.os.Parcelable
@@ -7,10 +7,11 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "bookstore")
-class Book(@PrimaryKey @ColumnInfo(name = "book_id") val BookNo: Int,
-                     @ColumnInfo(name = "book_name") val BookName: String?,
-                     @ColumnInfo(name = "price") val BookPrice: Int?,
-                     @ColumnInfo(name = "author_name") val AuthorName: String? )
+class Book(
+    @PrimaryKey @ColumnInfo(name = "book_id") val BookNo: Int,
+    @ColumnInfo(name = "book_name") val BookName: String?,
+    @ColumnInfo(name = "price") val BookPrice: Int?,
+    @ColumnInfo(name = "author_name") val AuthorName: String? )
 
 class BookData(
     val bookId: Int,
@@ -23,8 +24,7 @@ class BookData(
         parcel.readString(),
         parcel.readInt(),
         parcel.readString()
-    ) {
-    }
+    )
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeInt(bookId)
@@ -46,5 +46,4 @@ class BookData(
             return arrayOfNulls(size)
         }
     }
-
 }

@@ -1,21 +1,20 @@
-package com.example.booklibrary
+package com.example.booklibrary.database
 
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
-import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface BookDao {
     @Query("SELECT * FROM bookstore")
-    fun getAll(): Flow<List<Book>>
+    suspend fun getAll(): List<Book>
 
     @Query("SELECT * FROM bookstore WHERE book_id IN (:userIds)")
     suspend fun loadAllByIds(userIds: IntArray): List<Book>
 
     @Query("SELECT * FROM bookstore WHERE book_name LIKE :name")
-    fun findByName(name: String): Flow<List<Book>>
+    suspend fun findByName(name: String): List<Book>
 
     @Insert
     suspend fun insertAll(vararg users: Book)

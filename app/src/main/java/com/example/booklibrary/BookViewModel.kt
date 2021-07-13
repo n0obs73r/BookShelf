@@ -1,20 +1,31 @@
 package com.example.booklibrary
 
 import androidx.lifecycle.*
+import com.example.booklibrary.database.Book
+import com.example.booklibrary.database.BookRepository
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class BookViewModel(private val repository: BookRepository) : ViewModel() {
-    var allBooks = MutableLiveData<List<Book>>(listOf<Book>())
+    var allBooks = MutableLiveData<List<Book>>(listOf())
 
     init {
-        allBooks.value = repository.allBooks.asLiveData().value
+        viewModelScope.launch {
+            withContext(Dispatchers.IO) {
+                allBooks.postValue(repository.getAll())
+            }
+        }
     }
 
     fun insert(book: Book) = viewModelScope.launch {
         repository.insert(book)
     }
-    fun searchByName(bookName: String) {
-        allBooks.value = repository.searchBookByName(bookName).asLiveData().value
+
+    fun searchByName(bookName: String) = viewModelScope.launch {
+        withContext(Dispatchers.IO) {
+            allBooks.postValue(repository.searchBookByName(bookName))
+        }
     }
 }
 

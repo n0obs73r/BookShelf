@@ -10,6 +10,8 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.booklibrary.database.Book
+import com.example.booklibrary.database.BookData
 
 class MainActivity : AppCompatActivity() {
 

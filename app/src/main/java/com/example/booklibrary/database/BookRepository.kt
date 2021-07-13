@@ -1,10 +1,12 @@
-package com.example.booklibrary
+package com.example.booklibrary.database
 
 import androidx.annotation.WorkerThread
-import kotlinx.coroutines.flow.Flow
 
 class BookRepository(private val bookDao: BookDao) {
-    val allBooks: Flow<List<Book>> = bookDao.getAll()
+
+    suspend fun getAll(): List<Book> {
+        return bookDao.getAll()
+    }
 
     @Suppress("RedundantSuspendModifier")
     @WorkerThread
@@ -12,7 +14,7 @@ class BookRepository(private val bookDao: BookDao) {
         bookDao.insertAll(book)
     }
 
-    fun searchBookByName(name: String) : Flow<List<Book>>{
+    suspend fun searchBookByName(name: String) : List<Book> {
         return bookDao.findByName(name)
     }
 }
